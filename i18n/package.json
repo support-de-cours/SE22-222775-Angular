@@ -1,12 +1,17 @@
 {
-  "name": "i18n",
+  "name": "i18n-project",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port=4200",
+    "start:fr": "ng serve --configuration=fr --port=4201",
+    "start:no": "ng serve --configuration=no --port=4202",
     "build": "ng build",
+    "build:fr": "ng build --configuration=fr",
+    "build:no": "ng build --configuration=no",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "i18n:extract": "ng extract-i18n --output-path src/locale --format=json"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +31,7 @@
     "@angular-devkit/build-angular": "^15.0.4",
     "@angular/cli": "~15.0.4",
     "@angular/compiler-cli": "^15.0.0",
+    "@angular/localize": "^15.1.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",

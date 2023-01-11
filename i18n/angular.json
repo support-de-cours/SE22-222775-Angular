@@ -3,17 +3,30 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "i18n": {
+    "i18n-project": {
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale":"en-US",
+        "locales": {
+          "fr": {
+            "translation":"src/locale/messages.fr.json",
+            "baseHref": ""
+          },
+          "no": {
+            "translation":"src/locale/messages.no.json",
+            "baseHref": ""
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/i18n",
+            "outputPath": "dist/i18n-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -52,6 +65,16 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "fr": {
+              "localize":["fr"],
+              "outputPath": "dist/i18n-project-fr/",
+              "i18nMissingTranslation": "error"
+            },
+            "no": {
+              "localize":["no"],
+              "outputPath": "dist/i18n-project-no/",
+              "i18nMissingTranslation": "error"
             }
           },
           "defaultConfiguration": "production"
@@ -60,10 +83,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "i18n:build:production"
+              "browserTarget": "i18n-project:build:production"
             },
             "development": {
-              "browserTarget": "i18n:build:development"
+              "browserTarget": "i18n-project:build:development"
+            },
+            "fr": {
+              "browserTarget": "i18n-project:build:fr"
+            },
+            "no": {
+              "browserTarget": "i18n-project:build:no"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +100,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "i18n:build"
+            "browserTarget": "i18n-project:build"
           }
         },
         "test": {
