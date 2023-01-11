@@ -32,6 +32,10 @@ const routes: Routes = [
   },
 
   // NotFound / Wildcard
+  {
+    path: '**',
+    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
+  },
 
 ];
 
