@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AComponent } from '../components/a/a.component';
 import { BComponent } from '../components/b/b.component';
 import { CComponent } from '../components/c/c.component';
+import { BeforePageUnloadGuard } from '../guards/before-page-unload.guard';
+import { CanLoadGuard } from '../guards/can-load.guard';
+import { NoGuard } from '../guards/no.guard';
+import { OnPageLoadGuard } from '../guards/on-page-load.guard';
+import { YesGuard } from '../guards/yes.guard';
 
 const routes: Routes = [
 
@@ -10,6 +15,9 @@ const routes: Routes = [
   {
     path: 'page-a',
     component: AComponent,
+    canActivate: [
+      OnPageLoadGuard
+    ]
   },
 
   // Page B
@@ -21,7 +29,7 @@ const routes: Routes = [
   // Page C
   {
     path: 'page-c',
-    component: CComponent,
+    component: CComponent
   },
 
   // Default route/page
@@ -34,7 +42,8 @@ const routes: Routes = [
   // NotFound / Wildcard
   {
     path: '**',
-    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
+    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule),
+    canLoad: []
   },
 
 ];

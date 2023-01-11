@@ -11,6 +11,9 @@ const routes: Routes = [
 
   {
     path: 'books',
+    canActivateChild: [
+
+    ],
     children: [
 
       // Liste des livres
@@ -31,7 +34,6 @@ const routes: Routes = [
       // /books/42
       {
         path: ':id',
-        // component: ReadComponent
         children: [
 
           // Affichage des données d'un livre
