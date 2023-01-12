@@ -1,0 +1,14 @@
+Creation d'une appli angular
+
+avec 3 pages
+- accueil (home)
+- contact 
+- qui sommes nous (about)
+
+Ajouter la page NotFound en lazy loading
+
+
+Traduire les titres de page (en, fr)
+
+
+Rendre les document avec NgUniversal
