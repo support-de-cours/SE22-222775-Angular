@@ -17,5 +17,4 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this._messageService.messages.subscribe( (data:{[key: string]: string}) => this.messages = data );
   }
-
 }

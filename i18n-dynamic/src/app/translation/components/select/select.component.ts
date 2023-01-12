@@ -1,6 +1,7 @@
 import { environment } from '../../../../environments/environment';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MessagesService } from '../../services/messages.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'translation-select',
@@ -16,7 +17,8 @@ export class SelectComponent implements OnInit {
   locale: string = '';
 
   constructor(
-    private _messageService: MessagesService
+    private _messageService: MessagesService,
+    @Inject(DOCUMENT) private document: Document
   ){}
 
   ngOnInit(): void {
@@ -27,6 +29,7 @@ export class SelectComponent implements OnInit {
   async load(): Promise<void>
   {
     const data = await import(`./../../../../locale/messages.${this.locale}.json`);
-    this._messageService.messages = data.translations;    
+    this._messageService.messages = data.translations;
+    this.document.documentElement.lang = this.locale; 
   }
 }
