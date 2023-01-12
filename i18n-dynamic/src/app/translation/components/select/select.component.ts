@@ -1,3 +1,4 @@
+import { environment } from '../../../../environments/environment';
 import { Component } from '@angular/core';
 
 @Component({
@@ -12,4 +13,7 @@ export class SelectComponent {
 
   // Index de la langue selectionnée
   locale: string = '';
+
+  
+
 }
