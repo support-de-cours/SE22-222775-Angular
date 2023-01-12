@@ -1,0 +1,11 @@
+{
+  "locale": "fr",
+  "translations": {
+    "about.title": "Qui sommes nous",
+    "about.lead": "Une petite description à propos de notre entreprise",
+    "contact.title": "Restons en contact",
+    "home.title": "Bienvenu",
+    "ng.awesome": "Angular est génial",
+    "home.lead": "Un petit TP avec Angular"
+  }
+}

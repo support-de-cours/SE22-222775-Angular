@@ -6,6 +6,7 @@ avec 3 pages
 - qui sommes nous (about)
 
 Ajouter la page NotFound en lazy loading
+Ajouter la page par defaut
 
 
 Traduire les titres de page (en, fr)
