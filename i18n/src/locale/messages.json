@@ -1,9 +1,10 @@
 {
   "locale": "en-US",
   "translations": {
-    "3902961887793684628": "Hello",
-    "2807800733729323332": "Yes",
-    "3542042671420335679": "No",
-    "9204810756135586506": "Angular is awesome"
+    "messageHello": "Hello",
+    "messageYes": "Yes",
+    "messageNo": "No",
+    "messageAwesomeNg": "Angular is awesome",
+    "3902961887793684628": "Hello"
   }
 }

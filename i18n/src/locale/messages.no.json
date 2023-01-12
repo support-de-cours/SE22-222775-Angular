@@ -1,9 +1,9 @@
 {
   "locale": "no",
   "translations": {
-    "3902961887793684628": "Hallo",
-    "2807800733729323332": "Ja",
-    "3542042671420335679": "Nei",
-    "9204810756135586506": "Angular er veldig god"
+    "messageHello": "Hallo",
+    "messageYes": "Ja",
+    "messageNo": "Nei",
+    "messageAwesomeNg": "Angular er veldig god"
   }
 }
