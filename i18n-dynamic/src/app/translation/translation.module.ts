@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectComponent } from './components/select/select.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,11 @@ import { SelectComponent } from './components/select/select.component';
     SelectComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
+  ],
+  exports: [
+    SelectComponent
   ]
 })
 export class TranslationModule { }

@@ -1,1 +1,3 @@
-<p>select works!</p>
+<select [(ngModel)]="locale" (change)="load()">
+    <option value="{{ locale }}" *ngFor="let locale of locales">{{ locale }}</option>
+</select>

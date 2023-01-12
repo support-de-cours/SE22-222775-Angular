@@ -1,0 +1,11 @@
+{
+  "locale": "fr",
+  "translations": {
+    "messageHello": "Bonjour",
+    "messageYes": "Oui",
+    "messageNo": "Non",
+    "messageAwesomeNg": "Angular c'est trop génial",
+    "2477816097971033504": "Jouons avec l'internationalisation",
+    "3902961887793684628": "Hello"
+  }
+}
