@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'a11y-project';
+
+  txtLabel: string = "User name";
+  txtLabel2: string = "User birthday";
 }

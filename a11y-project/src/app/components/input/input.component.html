@@ -1,1 +1,13 @@
-<p>input works!</p>
+<div class="form-group">
+    <label for="a11y-input">{{label}}</label>
+    <input 
+        type="text"
+        id="a11y-input"
+        [value]="value"
+        (input)="onChange($event)"
+        [attr.aria-label]="ariaLabel"
+        [required]="isRequired"
+        [disabled]="isDisabled"
+    >
+</div>
+
