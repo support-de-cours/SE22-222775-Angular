@@ -1,0 +1,10 @@
+<hello [name]="name"></hello>
+
+<hr>
+<ul>
+    <app-item 
+      *ngFor="let item of items" 
+      [item]="item"
+      (click)="update(item?.id)" 
+    ></app-item>
+</ul>
