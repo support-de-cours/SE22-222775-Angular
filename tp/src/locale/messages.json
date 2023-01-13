@@ -3,6 +3,8 @@
   "translations": {
     "about.title": "About us",
     "about.lead": "A small text to describe Who we are",
+    "books.list.title": "Our all books",
+    "books.list.lead": "lorem ipsum all books",
     "contact.title": "Get in touch !",
     "home.title": "Welcome",
     "ng.awesome": "Angular is awesome",

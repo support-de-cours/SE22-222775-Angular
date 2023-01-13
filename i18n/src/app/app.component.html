@@ -10,3 +10,12 @@
 
 <div i18n>Hello</div>
 <div i18n>Hello</div>
+
+
+<div i18n="@@sayHello">Hello {{ name }}</div>
+<ng-container i18n="@@funnyDog">The dog is very funny</ng-container>
+
+<hr>
+
+<div>{{ fruits.length | i18nPlural: fruitsMessageMap }}</div>
+<div *ngFor="let fruit of fruits">{{ fruit }}</div>

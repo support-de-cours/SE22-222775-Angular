@@ -6,6 +6,8 @@
     "contact.title": "Restons en contact",
     "home.title": "Bienvenu",
     "ng.awesome": "Angular est génial",
-    "home.lead": "Un petit TP avec Angular"
+    "home.lead": "Un petit TP avec Angular",
+    "books.list.title": "Our all books",
+    "books.list.lead": "lorem ipsum all books"
   }
 }

@@ -6,6 +6,12 @@ import { EditComponent } from './edit/edit.component';
 import { ListComponent } from './list/list.component';
 import { ReadComponent } from './read/read.component';
 
+// site.com/books           ListComponent
+// site.com/book            CreateComponent
+// site.com/book/42         ReadComponent
+// site.com/book/42/edit    EditComponent
+// site.com/book/42/delete  DeleteComponent
+
 const routes: Routes = [
   {
     path: 'books',

@@ -5,19 +5,26 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { existsSync } from 'fs';
 import { join } from 'path';
+import { environment } from 'src/environments/environment';
 
 import { AppServerModule } from './src/main.server';
+import { LOCALE_ID } from '@angular/core';
 
 // The Express app is exported so that it can be used by serverless Functions.
-export function app(): express.Express {
+export function app(lang: string): express.Express {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/tp/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
-  server.engine('html', ngExpressEngine({
-    bootstrap: AppServerModule,
-  }));
+  server.engine(
+    'html',
+
+    ngExpressEngine({
+      bootstrap: AppServerModule,
+      extraProviders: [{ provide: LOCALE_ID, useValue: lang }],
+    } as any)
+  );
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
@@ -40,6 +47,13 @@ export function app(): express.Express {
 function run(): void {
   const port = process.env['PORT'] || 4000;
 
+  const appFr = app('fr');
+  const appEn = app('en');
+  const server = express();
+  server.use('/fr', appFr);
+  server.use('/en', appEn);
+  server.use('', appEn);
+
   // Start up the Node server
   const server = app();
   server.listen(port, () => {
@@ -53,8 +67,13 @@ function run(): void {
 declare const __non_webpack_require__: NodeRequire;
 const mainModule = __non_webpack_require__.main;
 const moduleFilename = mainModule && mainModule.filename || '';
-if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
+if (
+  (!environment.production && moduleFilename === __filename) ||
+  moduleFilename.includes('iisnode')
+  // moduleFilename === __filename || moduleFilename.includes('iisnode')
+) {
   run();
 }
+
 
 export * from './src/main.server';

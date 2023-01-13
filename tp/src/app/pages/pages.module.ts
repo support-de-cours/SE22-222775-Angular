@@ -19,7 +19,7 @@ const customModules: any[] = [
   imports: [
     ...customModules,
     CommonModule,
-    PagesRoutingModule
+    // PagesRoutingModule
   ]
 })
 export class PagesModule { }

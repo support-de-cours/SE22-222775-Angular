@@ -6,6 +6,11 @@
     "messageNo": "No",
     "messageAwesomeNg": "Angular is awesome",
     "3902961887793684628": "Hello",
-    "2477816097971033504": "Play with i18n"
+    "sayHello": "Hello {$INTERPOLATION}",
+    "funnyDog": "The dog is very funny",
+    "pageTitle": "Play with angular",
+    "no.fruit": "0 fruit (en)",
+    "one.fruit": "1 fruit (en)",
+    "many.fruits": "# fruits (en)"
   }
 }

@@ -1,0 +1,14 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "messageHello": "Hello",
+    "messageYes": "Yes",
+    "messageNo": "No",
+    "messageAwesomeNg": "Angular is awesome",
+    "3902961887793684628": "Hello",
+    "2477816097971033504": "Play with i18n",
+    "no.fruit": "No fruits",
+    "one.fruit": "One fruits",
+    "many.fruits": "# fruits"
+  }
+}

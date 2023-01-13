@@ -11,9 +11,11 @@
     "test": "ng test",
     "i18n:extract": "ng extract-i18n --output-path src/locale --format=json",
     "dev:ssr": "ng run tp:serve-ssr",
-    "serve:ssr": "node dist/tp/server/main.js",
-    "build:ssr": "ng build && ng run tp:server",
-    "prerender": "ng run tp:prerender"
+    "_serve:ssr": "node dist/tp/server/main.js",
+    "_build:ssr": "ng build && ng run tp:server",
+    "prerender": "ng run tp:prerender",
+    "serve:ssr": "node dist/tp/proxy-server.js",
+    "build:ssr": "ng build --prod && ng run tp:server:production && cpx proxy-server.js dist/angular-universal-i18n-demo"
   },
   "private": true,
   "dependencies": {
