@@ -7,6 +7,7 @@ import { TodoService } from '../todo.service';
 })
 export class FormComponent {
   item: string = '';
+  isDisabled: boolean = false;
 
   constructor(
     private _service: TodoService
@@ -14,7 +15,10 @@ export class FormComponent {
 
   addItem(): void 
   {
+    this.isDisabled = true;
     this._service.item = this.item;
     this.item = '';
+
+    setTimeout(()=> {this.isDisabled = false}, 3000);
   }
 }

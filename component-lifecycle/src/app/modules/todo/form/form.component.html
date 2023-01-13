@@ -1,4 +1,4 @@
 <div>
     <input type="text" [(ngModel)]="item" (keyup.enter)="addItem()">
-    <button (click)="addItem()">Add</button>
+    <button (click)="addItem()" [disabled]="isDisabled">Add</button>
 </div>
