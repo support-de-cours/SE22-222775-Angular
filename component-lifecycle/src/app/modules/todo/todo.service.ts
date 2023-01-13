@@ -26,3 +26,19 @@ export class TodoService {
     this._items.next(roomArr);
   }
 }
+
+
+
+
+import { Store } from '@ngrx/store';
+import { InfoState, getInfoState } from './store/reducers/info.reducer';
+
+export class MyComponent {
+  infoState: InfoState;
+
+  constructor(private store: Store<{ info: InfoState }>) {
+    this.store.select(getInfoState).subscribe(infoState => {
+      this.infoState = infoState;
+    });
+  }
+}
